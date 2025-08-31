@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product } from '@/db/types';
+import { Product } from '@/types/type';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card,CardHeader,CardContent } from '@/components/ui/card';
@@ -18,7 +18,9 @@ const ProductCard = ({product}: {product: Product}) => {
             <h2 className='text-sm font-medium'>{product.name}</h2>
             </Link>
             <div className="flex-between gap-4">
-                <p>{product.rating}</p>
+              {/* Reason to convert rating into number if DB return it in decimal or string format so it will not properly parse in UI in JSON format   */}
+                <p>{Number(product.rating).toFixed(1)}</p>
+
                 {product.stock >0 ? (
                     <ProductPrice value={Number(product.price)} className='text-red-500'/>
                 ) : (
@@ -30,4 +32,4 @@ const ProductCard = ({product}: {product: Product}) => {
   )
 }
 
-export default ProductCard
+export default ProductCard;

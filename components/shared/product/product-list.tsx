@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product } from '@/db/types';
+import { Product } from '@/types/type';
 import ProductCard from './product-card';
 const ProductList = ({data,title,limit}: {data: Product[]; title?: string; limit?: number}) => {
      

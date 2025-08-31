@@ -1,3 +1,5 @@
+// This is sample types we are using before using Data from DB.
+
 export interface Product {
   name: string;
   slug: string;

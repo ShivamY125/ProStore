@@ -1,15 +1,17 @@
 import React from 'react'
-import { SampleData } from '@/db/sample-data'
 import ProductList from '@/components/shared/product/product-list'
+import { GetLatestProduct } from '@/lib/actions/product.actions'
 //const delay=(ms)=> new Promise((resolve)=> setTimeout(resolve,ms));
 
-const HomePage = () => {
+const HomePage = async () => {
 //await delay(5000);
+  
+  const latestProduct = await GetLatestProduct();
   
   return (
     
    <>
-   <ProductList data={SampleData.products} title='Newest Arrivals' limit={4}/>
+   <ProductList data={latestProduct} title='Newest Arrivals'/>
    </>
   )
 }
