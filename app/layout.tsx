@@ -5,7 +5,7 @@ import { APP_NAME,APP_DESCRIPTION, SERVER_URL } from "@/lib/constants";
 // Theme provider import
 import { ThemeProvider } from "next-themes";
 
-export const inter = Inter({
+ const inter = Inter({
   subsets: ['latin']
 });
 
